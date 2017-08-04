@@ -6,6 +6,7 @@ RUN apt-get -qq update && apt-get install -y curl git build-essential \
   llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev && apt-get clean
 
 RUN useradd -ms /bin/bash ubuntu
+RUN curl -L https://raw.githubusercontent.com/idlecool/sparkbox/master/jupyter.service -o /usr/lib/systemd/system/jupyter.service
 USER ubuntu
 WORKDIR /home/ubuntu
 
